@@ -6,7 +6,7 @@ from validate_docbr import CPF
 
 app = FastAPI()
 
-# 🔹 Endpoint raiz para testar se a API está online
+#  Endpoint raiz para testar se a API está online
 @app.get("/")
 async def root(): 
     return {"message": "API RPA está rodando!"}
@@ -16,11 +16,11 @@ async def root():
 async def get_open_api():
     return get_open_api(title="RPA225", version="1.0.0", routes=app.routes)
 
-# 🔹 Classe para receber comandos na API
+#  Classe para receber comandos na API
 class InputData(BaseModel):
     command: str
 
-# 🔹 Função para validar CPF
+#  Função para validar CPF
 def validar_cpf(cpf: str) -> bool:
     return CPF().validate(cpf)
 
