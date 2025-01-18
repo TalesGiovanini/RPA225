@@ -1,108 +1,91 @@
-📄 Documentação do Projeto RPA225
-RPA225 - Robotic Process Automation (RPA) Simples
-Descrição:
-O RPA225 é um projeto de automação de processos utilizando Python e FastAPI. Ele fornece endpoints para validar CPF e gerar relatórios automaticamente. 🚀
+# 🏆 Documentação do Projeto RPA225
 
-📌 Tecnologias Utilizadas
-Python 3.12+
-FastAPI - Framework para criação de APIs rápidas
-Uvicorn - Servidor ASGI para execução do FastAPI
-Pandas - Manipulação de dados e geração de relatórios
-Validate-docbr - Validação de CPF
-Git/GitHub - Controle de versão
+🚀 **RPA225** é uma API desenvolvida com **FastAPI** para automação de tarefas e validação de CPF.
 
-📂 Estrutura do Projeto
-RPA225/
-│── src/
-│   ├── main.py          # Código principal da API
-│── tests/
-│   ├── test_main.py     # Arquivos de teste
-│── venv/                # Ambiente virtual (não versionado)
-│── requirements.txt     # Dependências do projeto
-│── README.md            # Documentação do projeto
-│── .gitignore           # Arquivos ignorados pelo Git
-│── LICENSE              # Licença do projeto
+## 📌 Funcionalidades
 
-⚡ Instalação
-1️⃣ Clone o repositório
+✅ Validação de CPF  
+✅ Processamento de comandos  
+✅ Geração de relatórios em CSV  
+✅ API com documentação automática via Swagger  
 
-git clone https://github.com/SEU_USUARIO/RPA225.git
+## 🚀 Como Executar o Projeto
+
+### **1️⃣ Clonar o Repositório**
+```bash
+git clone https://github.com/TalesGiovanini/RPA225.git
 cd RPA225
 
-2️⃣ Crie e ative um ambiente virtual
-
+2️⃣ Criar e Ativar o Ambiente Virtual
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate  # Windows
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
 
-3️⃣ Instale as dependências
-
+3️⃣ Instalar as Dependências
 pip install -r requirements.txt
 
-🚀 Como Executar
-Rodar o servidor FastAPI com Uvicorn:
-
+4️⃣ Rodar a API
 uvicorn src.main:app --host 0.0.0.0 --port 8080 --reload
 
-Agora, acesse a API no navegador:
+Após isso, a API estará rodando em:
+👉 http://127.0.0.1:8080/
 
-👉 http://127.0.0.1:8080
+📖 Documentação da API
+A API gera automaticamente uma documentação interativa com Swagger. Para acessar, abra no navegador:
 
-Para testar os endpoints via interface Swagger:
+👉 Swagger UI: http://127.0.0.1:8080/docs
+👉 Redoc: http://127.0.0.1:8080/redoc
 
-👉 http://127.0.0.1:8080/docs
+📡 Endpoints
 
-🛠️ Endpoints Disponíveis
-1️⃣ Verificar se a API está rodando
-Método: GET
-Endpoint: /
-Resposta:
+🔹 Testar se a API está online
+GET /
 
-{"message": "API RPA está rodando!"}
+📌 Retorno esperado
 
-2️⃣ Validar CPF
-Método: POST
-Endpoint: /executar
+{
+  "message": "API RPA está rodando!"
+}
 
-Exemplo de Requisição:
+🔹 Validar CPF
+POST /executar
+
+📌 Exemplo de Requisição
 
 {
   "command": "Validar CPF 123.456.789-09"
 }
 
-Resposta:
+📌 Retorno esperado
 
 {
   "resposta": "CPF válido: True"
 }
 
-3️⃣ Gerar Relatório
-Método: POST
-Endpoint: /executar
-Exemplo de Requisição:
+🔹 Gerar Relatório CSV
+POST /executar
+
+📌 Exemplo de Requisição
 
 {
-  "command": "Gerar relatório"
+  "command": "gerar relatório"
 }
 
-Resposta:
+📌 Retorno esperado
 
 {
   "resposta": "Relatório gerado com sucesso!"
 }
 
-📌 Testes Automatizados
-O projeto conta com testes automatizados para garantir a qualidade do código.
+🛠 Testes Automatizados
+O projeto contém testes automatizados para garantir a qualidade do código.
 
-Para rodar os testes:
-
+📌 Para rodar os testes, execute:
 pytest tests/test_main.py
 
 📜 Licença
-Este projeto está licenciado sob a MIT License. Sinta-se livre para contribuir e aprimorá-lo! 😃
+Este projeto está licenciado sob a MIT License. Sinta-se livre para contribuir e aprimorá-lo! 🚀
 
-📞 Contato
-Caso tenha dúvidas ou sugestões, entre em contato: 📧 Email: talesgiovanini@gmail.com
-🌎 GitHub: TalesGiovanini
-
-
+📩 Contato
+📧 Email: talesgiovanini@gmail.com
+🐙 GitHub: TalesGiovanini
